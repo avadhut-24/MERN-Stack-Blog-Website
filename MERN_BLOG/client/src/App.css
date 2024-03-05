@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box; /* To align button widht with two input fields */
+}
+
 img {
   max-width: 100%;
 }
@@ -39,4 +43,33 @@ div.post {
 div.post div.texts h2 {
   margin: 0;
   font-size: 1.3rem;
+}
+
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #ddd;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background-color: black;
+  color: #fff;
+  border-radius: 5px;
+}
+
+form h1 {
+  text-align: center;
 }
