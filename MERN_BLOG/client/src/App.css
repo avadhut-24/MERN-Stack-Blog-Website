@@ -1,0 +1,42 @@
+img {
+  max-width: 100%;
+}
+
+main {
+  padding: 10px;
+  max-width: 1000px;
+  margin: 0px auto; /* auto makes it in centre*/
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+header a {
+  color: black;
+}
+
+header a.logo {
+  font-weight: bold;
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+div.post {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+div.post div.texts h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
