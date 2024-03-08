@@ -10,7 +10,11 @@ export default function post() {
       <div className="texts">
         <h2>Target to launch its own version of Amazon Prime, starting at $49/year</h2>
         <p className="info">
-          <a className="author">Jack Levitson:</a>
+          <a
+            href=" "
+            className="author">
+            Jack Levitson:
+          </a>
           <time> 06-03-2024 00:47</time>
         </p>
 
