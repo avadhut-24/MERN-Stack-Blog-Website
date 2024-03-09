@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
+  // const [redirect, setRedirect] = useState(false);
 
   async function Login(ev) {
     ev.preventDefault();
@@ -15,15 +17,16 @@ export default function LoginPage() {
     });
 
     if (response.ok) {
-      setRedirect(true);
+      // setRedirect(true);
+      navigate('/');
     } else {
       alert('wrong credentials');
     }
 
-    if (redirect) {
-      console.log('check');
-      return <Navigate to={'/'} />;
-    }
+    // if (redirect) {
+    //   console.log('check');
+    //   return <Navigate to="/" />;
+    // }
   }
 
   return (
