@@ -1,16 +1,17 @@
 const express = require('express');
+const app = express();
 const mongoose = require('mongoose');
 const User = require('./models/user');
+const Post = require('./models/postModel');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const app = express();
 const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
-const fs = require('fs');
-const Post = require('./models/postModel');
+const fs = require('fs'); //File System
 
+//middlewares
 app.use(cookieParser());
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(express.json());
@@ -68,6 +69,11 @@ app.post('/login', async (req, res) => {
 
 app.get('/profile', (req, res) => {
   const { token } = req.cookies;
+
+  if (!token) {
+    //If user not loggedin then we don't get any token
+    return res.json('Not loggedin');
+  }
   jwt.verify(token, secret, {}, (err, info) => {
     if (err) throw err;
     res.json(info);
