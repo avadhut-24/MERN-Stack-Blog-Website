@@ -35,14 +35,36 @@ header nav {
 
 div.post {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
   margin-bottom: 30px;
 }
 
-div.post div.texts h2 {
+@media screen and (min-width: 700px) {
+  div.post {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+div.texts h2 {
   margin: 0;
   font-size: 1.3rem;
+}
+
+div.texts h2,
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.texts a {
+  font-weight: 500;
+  padding-right: 10px;
+}
+
+div.texts p.info {
+  display: flex;
+  font-size: small;
 }
 
 form.login,
@@ -72,4 +94,26 @@ button {
 
 form.login form.register h1 {
   text-align: center;
+}
+
+div.post-page {
+  text-align: center;
+}
+
+div.post-info time,
+a {
+  display: block;
+}
+
+div.post-info a {
+  margin-bottom: 10px;
+}
+div.post-info time {
+  color: #ddd;
+  font-size: small;
+}
+
+a.editbtn {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
